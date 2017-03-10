@@ -13,6 +13,9 @@
 
   <xacro:property name="width" value=".2" />
   <xacro:property name="bodylen" value=".6" />
+  <xacro:property name="wheelRadius" value="0.035" />
+  <xacro:property name="footBaseThickness" value="0.1" />
+
 
   <xacro:macro name="default_inertial" params="mass">
       <inertial>
@@ -38,6 +41,16 @@
     <xacro:default_inertial mass="10"/>
   </link>
 
+  <link name="base_footprint">
+
+  </link>
+
+  <joint name="base_to_base_footprint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 ${+(bodylen/2)+(wheelRadius*2)+footBaseThickness}"/>
+  </joint>
+
   <link name="right_leg">
     <visual>
       <geometry>
@@ -57,7 +70,7 @@
   <link name="right_base">
     <visual>
       <geometry>
-        <box size="0.4 .1 .1"/>
+        <box size="0.4 ${footBaseThickness} ${footBaseThickness}"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -73,7 +86,7 @@
     <visual>
       <origin rpy="1.57075 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.1" radius="0.035"/>
+        <cylinder length="0.1" radius="${wheelRadius}"/>
       </geometry>
       <material name="black"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -90,7 +103,7 @@
     <visual>
       <origin rpy="1.57075 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.1" radius="0.035"/>
+        <cylinder length="0.1" radius="${wheelRadius}"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -121,7 +134,7 @@
   <link name="left_base">
     <visual>
       <geometry>
-        <box size="0.4 .1 .1"/>
+        <box size="0.4 ${footBaseThickness} ${footBaseThickness}"/>
       </geometry>
       <material name="white"/>
     </visual>
