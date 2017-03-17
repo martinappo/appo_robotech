@@ -16,7 +16,6 @@
   <xacro:property name="wheelRadius" value="0.035" />
   <xacro:property name="footBaseThickness" value="0.1" />
 
-
   <xacro:macro name="default_inertial" params="mass">
       <inertial>
         <mass value="${mass}" />
@@ -277,6 +276,16 @@
       <material name="blue"/>
     </visual>
   </link>
+
+  <link name="eye">
+
+  </link>
+
+  <joint name="eye_to_box" type="fixed">
+    <parent link="box"/>
+    <child link="eye"/>
+    <origin rpy="1.57 3.14 1.57" xyz="0 0 0"/>
+  </joint>
 
   <joint name="tobox" type="fixed">
     <parent link="head"/>
