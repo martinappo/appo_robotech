@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: planning_tutorial
+Description: Description of planning_tutorial
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: roscpp rospy std_msgs message_runtime moveit_core moveit_ros_planning_interface interactive_markers

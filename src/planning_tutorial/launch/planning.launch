@@ -1,0 +1,3 @@
+<launch>
+        <node output="screen" pkg="planning_tutorial" name="planning" type="planning"/>
+</launch>

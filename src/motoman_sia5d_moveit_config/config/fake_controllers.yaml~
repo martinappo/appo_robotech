@@ -1,0 +1,17 @@
+controller_list:
+  - name: fake_sia5_controller
+    type: interpolate | via points | last point    
+    joints:
+      - joint_s
+      - joint_l
+      - joint_e
+      - joint_u
+      - joint_r
+      - joint_b
+      - joint_t
+      - link_t-lool0
+      - link_l-base
+
+initial:
+  - group: sia5
+    pose: home_pose

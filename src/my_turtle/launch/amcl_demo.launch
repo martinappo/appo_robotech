@@ -1,6 +1,6 @@
 <launch>
   <!-- Map server -->
-  <arg name="map_file" default="$(env TURTLEBOT_GAZEBO_MAP_FILE)"/>
+  <arg name="map_file" default="/home/martin/appo_robtech/src/my_turtle/my_turtle_map3.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
   <!-- Localization -->
