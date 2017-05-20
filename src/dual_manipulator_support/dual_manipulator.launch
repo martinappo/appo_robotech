@@ -1,0 +1,5 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find dual_manipulator_support)/urdf/2_sia5d.xacro'" />
+    <node output="screen" pkg="dual_manipulator_support" name="dual_planning" type="dual_planning"/>
+    <include file="$(find dual_sia5_moveit_conf)/launch/demo.launch"/>
+</launch>
