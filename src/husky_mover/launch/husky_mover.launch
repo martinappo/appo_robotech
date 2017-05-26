@@ -1,0 +1,10 @@
+<launch>
+
+     <node pkg="keyboard_reader" name="keyboard_event_publisher" type="keyboard_event_publisher">
+    </node>
+
+  <node pkg="husky_mover" name="husky_mover_node" type="husky_mover_node" output="screen">
+    <remap from="husky_mover/cmd_vel" to="husky_velocity_controller/cmd_vel"/>
+  </node>
+
+</launch>
